@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Scout</string>
+
+    <string name="title_activity_home_screen2">HomeScreen2</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="background">Background</string>
+    <string name="logo">Logo</string>
+    <string name="Nature_1">Button</string>
+    <string name="nature_1">Nature_1</string>
+    <string name="delft">Delft</string>
+    <string name="tempoverlay">tempoverlay</string>
+</resources>
