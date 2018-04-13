@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".custom_row" />
-        <activity android:name=".scoutScreen"></activity>
+        <activity android:name=".scoutScreen" />
+        <activity android:name=".complete_screen"></activity>
     </application>
 
 </manifest>

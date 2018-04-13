@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp">
+    android:layout_marginRight="8dp"
+    android:onClick="setTextVisible"
+    >
 
 
 
@@ -26,10 +28,11 @@
         android:layout_marginBottom="24dp"
         android:text="Large Text"
         android:textColor="#FFFFFF"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/Placephoto"
         app:layout_constraintEnd_toEndOf="@+id/Placephoto"
-        app:layout_constraintStart_toStartOf="@+id/Placephoto" />
+        app:layout_constraintStart_toStartOf="@+id/Placephoto"
+
+        />
 
 
 </android.support.constraint.ConstraintLayout>

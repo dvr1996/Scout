@@ -24,12 +24,14 @@ else we would modify CustomAdapter to accept that array too.
 
 
 public class MainScreen extends AppCompatActivity {
-    TextView itemtext;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
+        TextView itemtext;
         final String[] places = new String[] {"Delft", "Nature", "Streetart", "Delft", "Nature", "Streetart"};
         // Replace the Array adapter with your custom adapter.
         ListAdapter theListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, places);
@@ -37,18 +39,21 @@ public class MainScreen extends AppCompatActivity {
         ListView customListView = (ListView) findViewById(R.id.custom_ListView);
         customListView.setAdapter(customListAdapter);
 
-        itemtext=(TextView)findViewById(R.id.item_text);
-      //  itemtext.setVisibility(View.INVISIBLE);
+        itemtext = (TextView) findViewById(R.id.item_text);
+        //itemtext.setVisibility(View.GONE);
 
 
-
-        customListView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                       //itemtext.setVisibility(View.VISIBLE);
-                    }
-                }
-        );
+//        customListView.setOnItemClickListener(
+//                new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                        customListView.holder.itemText.setVisibility(View.VISIBLE);
+//                    }
+//                }
+//        );
     }
+
+//    public void setTextVisible(View view){
+//        TextView itemtext = (TextView) findViewById(R.id.item_text).setVisibility(View.VISIBLE);
+//    }
 }

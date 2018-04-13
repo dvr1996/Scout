@@ -26,7 +26,7 @@ class CustomAdapter extends ArrayAdapter<String>{
     class MyViewHolder {
 
         ImageView photo;
-        TextView itemText;
+        public TextView itemText;
 
         MyViewHolder (View v){
             itemText= (TextView) v.findViewById(R.id.item_text);
@@ -41,7 +41,7 @@ class CustomAdapter extends ArrayAdapter<String>{
         // default -  return super.getView(position, convertView, parent);
         // add the layout
        View row= convertView;
-       MyViewHolder holder=null;
+       MyViewHolder holder;
 
        if(row==null){
 
@@ -60,7 +60,8 @@ class CustomAdapter extends ArrayAdapter<String>{
 
         // dynamically update the text from the array
         holder.itemText.setText(singlePlace);
-        // dynamically update the picture
+        holder.itemText.setVisibility(View.GONE);
+
         switch (position) {
             case 0:
                 holder.photo.setImageResource(R.drawable.delft);
@@ -83,6 +84,10 @@ class CustomAdapter extends ArrayAdapter<String>{
         }
         return row;
 
+
+
     }
 
+
 }
+
