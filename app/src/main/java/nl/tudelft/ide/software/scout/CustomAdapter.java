@@ -6,7 +6,9 @@ package nl.tudelft.ide.software.scout;
 
 
 // Lesson 48
+        import android.app.Activity;
         import android.content.Context;
+        import android.support.annotation.VisibleForTesting;
         import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
         import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
         import android.util.Log;
@@ -14,6 +16,7 @@ package nl.tudelft.ide.software.scout;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.ArrayAdapter;
+        import android.widget.Button;
         import android.widget.ImageView;
         import android.widget.ProgressBar;
         import android.widget.TextView;
@@ -23,17 +26,21 @@ class CustomAdapter extends ArrayAdapter<String>{
         super(context, R.layout.custom_row ,foods);
     }
 
+
     class MyViewHolder {
 
         ImageView photo;
-        public TextView itemText;
+        TextView itemText;
+        Button findButton;
 
-        MyViewHolder (View v){
+       public MyViewHolder (View v){
             itemText= (TextView) v.findViewById(R.id.item_text);
-            photo = (ImageView) v.findViewById(R.id.Placephoto);
+            photo = (ImageView) v.findViewById(R.id.place_photo);
+            findButton = (Button) v.findViewById(R.id.find_button);
+//            findButton.setVisibility(View.GONE);
+//            itemText.setVisibility(View.GONE);
         }
     }
-
 
 
     @Override
@@ -60,8 +67,6 @@ class CustomAdapter extends ArrayAdapter<String>{
 
         // dynamically update the text from the array
         holder.itemText.setText(singlePlace);
-        holder.itemText.setVisibility(View.GONE);
-
         switch (position) {
             case 0:
                 holder.photo.setImageResource(R.drawable.delft);
@@ -83,11 +88,10 @@ class CustomAdapter extends ArrayAdapter<String>{
                 break;
         }
         return row;
-
-
-
     }
 
 
+
 }
+
 

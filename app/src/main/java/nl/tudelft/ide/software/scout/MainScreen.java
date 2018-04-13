@@ -31,29 +31,30 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-        TextView itemtext;
-        final String[] places = new String[] {"Delft", "Nature", "Streetart", "Delft", "Nature", "Streetart"};
+
+        final String[] places = new String[]{"Delft", "Nature", "Streetart", "Delft", "Nature", "Streetart"};
         // Replace the Array adapter with your custom adapter.
         ListAdapter theListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, places);
-        final ListAdapter customListAdapter = new CustomAdapter(this,places);// Pass the food arrary to the constructor.
+        final ListAdapter customListAdapter = new CustomAdapter(this, places);// Pass the food arrary to the constructor.
         ListView customListView = (ListView) findViewById(R.id.custom_ListView);
         customListView.setAdapter(customListAdapter);
 
-        itemtext = (TextView) findViewById(R.id.item_text);
-        //itemtext.setVisibility(View.GONE);
-
-
-//        customListView.setOnItemClickListener(
-//                new AdapterView.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                        customListView.holder.itemText.setVisibility(View.VISIBLE);
-//                    }
-//                }
-//        );
+        customListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        String food = String.valueOf(parent.getItemAtPosition(position));
+                        Toast.makeText(MainScreen.this, food, Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
     }
 
-//    public void setTextVisible(View view){
-//        TextView itemtext = (TextView) findViewById(R.id.item_text).setVisibility(View.VISIBLE);
-//    }
+    public void find(View view) {
+        Intent myIntent = new Intent(this,HomeScreen.class);
+        startActivity(myIntent);
+    }
+
+
 }
+
