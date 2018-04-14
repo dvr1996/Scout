@@ -24,7 +24,8 @@
         <activity android:name=".custom_row" />
         <activity android:name=".scoutScreen" />
         <activity android:name=".complete_screen" />
-        <activity android:name=".Photoscreen"></activity>
+        <activity android:name=".Photoscreen" />
+        <activity android:name=".DetailScreen"></activity>
     </application>
 
 </manifest>

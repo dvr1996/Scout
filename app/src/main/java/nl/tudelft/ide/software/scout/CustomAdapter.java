@@ -1,24 +1,12 @@
 package nl.tudelft.ide.software.scout;
 
-/**
- * Created by davidvanrijn on 28/03/2018.
- */
-
-
-// Lesson 48
-        import android.app.Activity;
         import android.content.Context;
-        import android.support.annotation.VisibleForTesting;
-        import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-        import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-        import android.util.Log;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.ArrayAdapter;
         import android.widget.Button;
         import android.widget.ImageView;
-        import android.widget.ProgressBar;
         import android.widget.TextView;
 
 class CustomAdapter extends ArrayAdapter<String>{
@@ -26,72 +14,49 @@ class CustomAdapter extends ArrayAdapter<String>{
         super(context, R.layout.custom_row ,foods);
     }
 
-
-    class MyViewHolder {
-
-        ImageView photo;
-        TextView itemText;
-        Button findButton;
-
-       public MyViewHolder (View v){
-            itemText= (TextView) v.findViewById(R.id.item_text);
-            photo = (ImageView) v.findViewById(R.id.place_photo);
-            findButton = (Button) v.findViewById(R.id.find_button);
-//            findButton.setVisibility(View.GONE);
-//            itemText.setVisibility(View.GONE);
-        }
-    }
-
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // default -  return super.getView(position, convertView, parent);
         // add the layout
-       View row= convertView;
-       MyViewHolder holder;
-
-       if(row==null){
-
-           LayoutInflater myCustomInflater = LayoutInflater.from(getContext());
-           row = myCustomInflater.inflate(R.layout.custom_row, parent, false);
-           holder= new MyViewHolder(row);
-           row.setTag(holder);
-       }
-
-       else {
-           holder= (MyViewHolder) row.getTag();
-       }
-
+        LayoutInflater myCustomInflater = LayoutInflater.from(getContext());
+        View customView = myCustomInflater.inflate(R.layout.custom_row, parent, false);
         // get references.
-        String singlePlace = getItem(position);
+        String places= getItem(position);
+        TextView itemText = (TextView) customView.findViewById(R.id.item_text);
+        ImageView photo = (ImageView) customView.findViewById(R.id.place_photo);
+        //Button find = (Button) customView.findViewById(R.id.find_button);
+
+//        itemText.setVisibility(View.GONE);
+//        find.setVisibility(View.GONE);
 
         // dynamically update the text from the array
-        holder.itemText.setText(singlePlace);
-        switch (position) {
+        itemText.setText(places);
+        itemText.setVisibility(View.GONE);
+        // using the same image every time
+        switch(position) {
             case 0:
-                holder.photo.setImageResource(R.drawable.delft);
+                photo.setImageResource(R.drawable.delft);
                 break;
             case 1:
-                holder.photo.setImageResource(R.drawable.nature_1);
+                photo.setImageResource(R.drawable.nature_1);
                 break;
             case 2:
-                holder.photo.setImageResource(R.drawable.streetart_1);
+                photo.setImageResource(R.drawable.delft);
                 break;
             case 3:
-                holder.photo.setImageResource(R.drawable.delft);
+                photo.setImageResource(R.drawable.nature_1);
                 break;
             case 4:
-                holder.photo.setImageResource(R.drawable.nature_1);
+                photo.setImageResource(R.drawable.delft);
                 break;
             case 5:
-                holder.photo.setImageResource(R.drawable.streetart_1);
+                photo.setImageResource(R.drawable.nature_1);
                 break;
+
+
         }
-        return row;
+        // Now we can finally return our custom View or custom item
+        return customView;
     }
 
-
-
 }
-
-

@@ -31,29 +31,26 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-
         final String[] places = new String[]{"Delft", "Nature", "Streetart", "Delft", "Nature", "Streetart"};
         // Replace the Array adapter with your custom adapter.
         ListAdapter theListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, places);
-        final ListAdapter customListAdapter = new CustomAdapter(this, places);// Pass the food arrary to the constructor.
-        ListView customListView = (ListView) findViewById(R.id.custom_ListView);
+        final ListAdapter customListAdapter = new CustomAdapter(this, places);// Pass the places array to the constructor.
+        final ListView customListView = (ListView) findViewById(R.id.custom_ListView);
         customListView.setAdapter(customListAdapter);
 
         customListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String food = String.valueOf(parent.getItemAtPosition(position));
-                        Toast.makeText(MainScreen.this, food, Toast.LENGTH_LONG).show();
+                    public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                       Intent intent = new Intent(MainScreen.this, DetailScreen.class);
+                       intent.putExtra("discription", customListView.getItemAtPosition(i).toString());
+                       startActivity(intent);
                     }
                 }
         );
     }
 
-    public void find(View view) {
-        Intent myIntent = new Intent(this,HomeScreen.class);
-        startActivity(myIntent);
-    }
+
 
 
 }

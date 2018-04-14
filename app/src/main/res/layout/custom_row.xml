@@ -17,7 +17,6 @@
         android:layout_height="200dp"
         android:scaleType="fitXY"
         android:src="@drawable/delft"
-        android:onClick="setvisible"
         />
 
     <TextView
@@ -33,16 +32,16 @@
 
         />
 
-    <Button
-        android:id="@+id/find_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FIND"
-        android:onClick="find"
-        app:layout_constraintEnd_toEndOf="@id/place_photo"
-        app:layout_constraintStart_toStartOf="@id/place_photo"
-        app:layout_constraintTop_toTopOf="@id/place_photo"
-        app:layout_constraintBottom_toBottomOf="@id/place_photo"/>
+    <!--<Button-->
+        <!--android:id="@+id/find_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="FIND"-->
+        <!--android:onClick="find"-->
+        <!--app:layout_constraintEnd_toEndOf="@id/place_photo"-->
+        <!--app:layout_constraintStart_toStartOf="@id/place_photo"-->
+        <!--app:layout_constraintTop_toTopOf="@id/place_photo"-->
+        <!--app:layout_constraintBottom_toBottomOf="@id/place_photo"/>-->
 
 
 

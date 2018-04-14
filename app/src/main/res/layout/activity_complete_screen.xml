@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFE5FF"
-    tools:context="nl.tudelft.ide.software.scout.complete_screen">
+    tools:context="nl.tudelft.ide.software.scout.complete_screen"
+    >
 
     <ImageView
         android:id="@+id/duimpje"
