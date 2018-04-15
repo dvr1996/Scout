@@ -24,16 +24,11 @@ public class DetailScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_screen);
 
-        itemtext = (TextView) findViewById(R.id.description);
+        itemtext = (TextView) findViewById(R.id.discription);
         photo = (ImageView) findViewById(R.id.mainphoto);
         find = (Button) findViewById(R.id.findbutton);
 
-        Bundle bundle = getIntent().getExtras();
 
-
-        if (bundle != null) {
-           itemtext.setText(String.valueOf(bundle.getInt("position")));
-        }
     }
 
     public void find(View view) {
