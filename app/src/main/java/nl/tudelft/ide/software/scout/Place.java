@@ -10,11 +10,11 @@ public class Place {
     private String LocationLong;
     private String LocationLat;
 
-    public Place(String image, String name)  {
+    public Place(String image, String name, String LocationLong, String LocationLat)  {
         this.image = image;
         this.name = name;
-//        this.LocationLong = LocationLong;
-//        this.LocationLat = LocationLat;
+        this.LocationLong = LocationLong;
+        this.LocationLat = LocationLat;
     }
 
     public String getImage() {
@@ -32,21 +32,21 @@ public class Place {
     public void setName(String name) {
         this.name = name;
     }
-//
-//    public String getLocationLong() {
-//        return LocationLong;
-//    }
-//
-//    public void setLocationLong(String LocationLong) {
-//        this.LocationLong = LocationLong;
-//    }
-//
-//    public String getLocationLat() {
-//        return LocationLat;
-//    }
-//
-//    public void setLocationLat(String LocationLat) {
-//        this.LocationLat = LocationLat;
-//    }
+
+    public String getLocationLong() {
+        return LocationLong;
+    }
+
+    public void setLocationLong(String LocationLong) {
+        this.LocationLong = LocationLong;
+    }
+
+    public String getLocationLat() {
+        return LocationLat;
+    }
+
+    public void setLocationLat(String LocationLat) {
+        this.LocationLat = LocationLat;
+    }
 }
 

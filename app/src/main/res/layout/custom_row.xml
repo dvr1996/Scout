@@ -29,7 +29,30 @@
         app:layout_constraintBottom_toBottomOf="@+id/place_photo"
         app:layout_constraintEnd_toEndOf="@+id/place_photo"
         app:layout_constraintStart_toStartOf="@+id/place_photo"
+        />
 
+    <TextView
+        android:id="@+id/Long"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:text="Long"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/place_photo"
+        app:layout_constraintEnd_toEndOf="@+id/place_photo"
+        app:layout_constraintStart_toStartOf="@+id/place_photo"
+        />
+
+    <TextView
+        android:id="@+id/Lat"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        android:text="Lat"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/place_photo"
+        app:layout_constraintEnd_toEndOf="@+id/place_photo"
+        app:layout_constraintStart_toStartOf="@+id/place_photo"
         />
 
     <!--<Button-->

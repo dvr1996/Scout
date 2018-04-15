@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 public class DetailScreen extends AppCompatActivity {
@@ -29,14 +30,9 @@ public class DetailScreen extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        if (bundle != null) {
-            itemtext.setText(bundle.getString("description"));
-            if (itemtext.getText().toString().equalsIgnoreCase("Delft")) {
-                photo.setImageDrawable(ContextCompat.getDrawable(DetailScreen.this, R.drawable.delft));
-            } else if (itemtext.getText().toString().equalsIgnoreCase("Nature")) {
-                photo.setImageDrawable(ContextCompat.getDrawable(DetailScreen.this, R.drawable.nature_1));
-            }
 
+        if (bundle != null) {
+           itemtext.setText(String.valueOf(bundle.getInt("position")));
         }
     }
 

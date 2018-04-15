@@ -1,8 +1,11 @@
 package nl.tudelft.ide.software.scout;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -45,6 +48,19 @@ public class MainScreen extends AppCompatActivity {
                 new ReadJSON().execute("http://192.168.2.136:8081/loadpictures");
             }
         });
+
+
+
+        lv.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                        Intent intent = new Intent(MainScreen.this, DetailScreen.class);
+                        intent.putExtra("position", i);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     class ReadJSON extends AsyncTask<String, Integer, String> {
@@ -61,10 +77,12 @@ public class MainScreen extends AppCompatActivity {
                 JSONArray jsonArray =  jsonObject.getJSONArray("Picturesss");
 
                 for(int i =0;i<jsonArray.length(); i++){
-                    JSONObject productObject = jsonArray.getJSONObject(i);
+                    JSONObject placeObject = jsonArray.getJSONObject(i);
                     arrayList.add(new Place(
-                            productObject.getString("image"),
-                            productObject.getString("name")
+                            placeObject.getString("image"),
+                            placeObject.getString("name"),
+                            placeObject.getString("LocationLong"),
+                            placeObject.getString("LocationLat")
                     ));
                 }
             } catch (JSONException e) {
@@ -98,4 +116,6 @@ public class MainScreen extends AppCompatActivity {
         }
         return content.toString();
     }
+
+
 }
