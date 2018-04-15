@@ -45,3 +45,5 @@ public class DetailScreen extends AppCompatActivity {
         startActivity(myIntent);
     }
 }
+
+//
