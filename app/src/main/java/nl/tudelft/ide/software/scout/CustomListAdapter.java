@@ -56,3 +56,5 @@ public class CustomListAdapter extends ArrayAdapter<Place> {
         return convertView;
     }
 }
+
+//
