@@ -43,7 +43,7 @@ public class MainScreen extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                        Intent intent = new Intent(MainScreen.this, DetailScreen.class);
-                       intent.putExtra("discription", customListView.getItemAtPosition(i).toString());
+                       intent.putExtra("description", customListView.getItemAtPosition(i).toString());
                        startActivity(intent);
                     }
                 }

@@ -31,6 +31,7 @@ class CustomAdapter extends ArrayAdapter<String>{
 
         // dynamically update the text from the array
         itemText.setText(places);
+        // set discription invisible
         itemText.setVisibility(View.GONE);
         // using the same image every time
         switch(position) {
