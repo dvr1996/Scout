@@ -46,4 +46,4 @@ public class DetailScreen extends AppCompatActivity {
     }
 }
 
-//
+
