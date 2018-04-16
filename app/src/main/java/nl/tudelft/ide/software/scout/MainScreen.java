@@ -46,7 +46,7 @@ public class MainScreen extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("http://192.168.2.136:8081/loadpictures");
+                new ReadJSON().execute("http://145.94.181.25:8081/loadpictures");
             }
         });
 

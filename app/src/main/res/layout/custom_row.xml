@@ -8,13 +8,10 @@
     android:layout_marginRight="8dp"
     >
 
-
-
-
     <ImageView
         android:id="@+id/place_photo"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:scaleType="centerCrop"
         android:src="@drawable/delft"
         />

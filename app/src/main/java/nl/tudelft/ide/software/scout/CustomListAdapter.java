@@ -53,12 +53,15 @@ public class CustomListAdapter extends ArrayAdapter<Place> {
 
         TextView txtName = (TextView) convertView.findViewById(R.id.item_text);
         txtName.setText(place.getName());
+        txtName.setVisibility(View.GONE);
 
         TextView txtLong = (TextView) convertView.findViewById(R.id.Long);
         txtLong.setText(place.getLocationLong());
+        txtLong.setVisibility(View.GONE);
 
         TextView txtLat = (TextView) convertView.findViewById(R.id.Lat);
         txtLat.setText(place.getLocationLat());
+        txtLat.setVisibility(View.GONE);
 
 
 
